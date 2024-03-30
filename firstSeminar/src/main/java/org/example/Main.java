@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.classes.Person;
+import org.example.classes.PersonBuilder;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,4 +15,12 @@ public class Main {
             System.out.println(person.getName());
 
     }
+    Person personWithBuilder = new
+            PersonBuilder()
+            .name("정채은")
+            .age(24)
+            .sex("female")
+            .build();
+
+    Person personWithFactoryMethod = Person.create("정채은", 24, "female");
 }
