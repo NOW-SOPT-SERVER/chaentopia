@@ -15,6 +15,6 @@ public class TestController {
 
     @GetMapping("/json")
     public APIResponse testJson() {
-        return APIResponse.create("test API with JSON");
+        return APIResponse.create("채은이의 첫 API ^^ with JSON");
     }
 }
