@@ -32,7 +32,7 @@ public class BankMain {
                 transfer();
                 break;
             case 2:
-                System.out.println("입금");
+                deposit();
                 break;
             case 3:
                 System.out.println("출금");
@@ -107,6 +107,15 @@ public class BankMain {
                     System.out.println("없는 선택지입니다. 다시 시도해 주세요.");
             }
         }
+    }
+
+    // 입금
+    public void deposit() {
+        System.out.println("입금할 금액을 입력해 주세요.");
+        int money = scanner.nextInt();
+        scanner.nextLine();
+        account.deposit(money);
+        System.out.println("입금이 완료되었습니다. " + "\n잔액: " + account.getProperty());
     }
 
     // 비밀번호 확인
