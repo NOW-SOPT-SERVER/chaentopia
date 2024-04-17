@@ -17,7 +17,7 @@ public class ProductService {
     public String createProduct(
             ProductSellDto productSellDto
     ) {
-        Product product = Product.create(productSellDto.title(),productSellDto.isSell(), productSellDto.price(), productSellDto.suggest(), productSellDto.description(), productSellDto.location() );
+        Product product = Product.create(productSellDto.title(),productSellDto.isSell(), productSellDto.price(), productSellDto.suggest(), productSellDto.description(), productSellDto.location());
         productRepository.save(product);
         return product.getId().toString();
     }
