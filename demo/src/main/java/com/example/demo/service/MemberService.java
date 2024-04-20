@@ -1,6 +1,8 @@
 package com.example.demo.service;
 
 import com.example.demo.domain.Member;
+import com.example.demo.exception.NotFoundException;
+import com.example.demo.exception.message.ErrorMessage;
 import com.example.demo.repository.MemberRepository;
 import com.example.demo.service.dto.MemberCreateDto;
 import com.example.demo.service.dto.MemberFindDto;
@@ -21,6 +23,12 @@ public class MemberService {
         Member member = Member.create(memberCreateDto.name(), memberCreateDto.part(), memberCreateDto.age());
         memberRepository.save(member);
         return member.getId().toString();
+    }
+
+    public Member findById(Long memberId) {
+        return memberRepository.findById(memberId).orElseThrow(
+                () -> new NotFoundException(ErrorMessage.MEMBER_NOT_FOUND_BY_ID_EXCEPTION)
+        );
     }
 
     public MemberFindDto findMemberById(Long memberId) {
