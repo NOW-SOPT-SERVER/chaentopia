@@ -129,7 +129,6 @@ fabric.properties
 .mtj.tmp/
 
 # Package Files #
-*.jar
 *.war
 *.nar
 *.ear
@@ -173,5 +172,7 @@ Temporary Items
 ### macOS Patch ###
 # iCloud generated files
 *.icloud
+
+!gradle-wrapper.jar
 
 # End of https://www.toptal.com/developers/gitignore/api/java,intellij,macos
